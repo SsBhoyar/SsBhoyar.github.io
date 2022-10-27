@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 3.1 Operator</title>
+</head>
+
+<body>
+
+    <Fieldset>
+        <legend>Compare 2 Numbers</legend>
+        <input type="text" id="ip1">
+        <input type="number" id="ip2">
+        <br><br>
+        <button onclick="grt()">Greater</button>
+        <button onclick="sml()">Smaller</button>
+        <br><br>
+        <p id="result"></p>
+    </Fieldset>
+
+    <fieldset>
+        <legend>Compare 3 Numbers</legend>
+        <input type="text" id="num1">
+        <input type="text" id="num2">
+        <input type="text" id="num3">
+        <br><br>
+        <button onclick="lrg()">Larger</button>
+        <button onclick="lsr()">Lesser</button>
+        <br><br>
+        <p id="answer"></p>
+    </fieldset>
+
+    <script>
+
+        // 2 Numbers
+
+        function grt() {
+            var x, y, z;
+            x = document.getElementById("ip1").value;
+            y = document.getElementById("ip2").value;
+            z = (x > y ? x : y);
+            document.getElementById("result").innerHTML = z;
+        }
+
+        function sml() {
+            var x, y, z;
+            x = document.getElementById("ip1").value;
+            y = document.getElementById("ip2").value;
+            z = (x < y ? x : y);
+            document.getElementById("result").innerHTML = z;
+        }
+
+        // 3 Numbers
+
+
+        function lrg() {
+            var a, b, c;
+            a = parseInt(document.getElementById("num1").value);
+            b = parseInt(document.getElementById("num2").value);
+            c = parseInt(document.getElementById("num3").value);
+            d = (a > b ? (a > c ? a : c) : (b > c ? b : c));
+            document.getElementById("answer").innerHTML = d;
+        }
+
+        function lsr() {
+            var a, b, c;
+            a = parseInt(document.getElementById("num1").value);
+            b = parseInt(document.getElementById("num2").value);
+            c = parseInt(document.getElementById("num3").value);
+            d = (a < b ? (a < c ? a : c) : (b < c) ? b : c);
+            document.getElementById("answer").innerHTML = d;
+        }
+    </script>
+</body>
+
+</html>

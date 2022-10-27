@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random UID Task</title>
+</head>
+<body>
+    <h1>Generate a Unique UID from Name</h1>
+    <input type="text" id="name">
+    <button onclick="uid()">Generate</button>
+    <br><br>
+    <span>Your Unique UID is:</span>
+    <p id="id"> </p>
+
+    <script>
+        function uid() {
+            let x = document.getElementById("name").value;
+            document.getElementById("id").innerHTML = x.substr(0, 4) + "_" + Math.floor(Math.random() * 1000000);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constructor</title>
+</head>
+<body>
+    <h1>Object Constructor</h1>
+
+    <script>
+        person = (fname, lname) => {
+            console.log(fname + " " + lname);
+        };
+
+        person("John", "Doe");
+
+        function person(fname, lname) {
+            console.log(fanme + " " + lname)
+        };
+
+        person("Mon" , "Joe");
+
+        function Person(fname, lname) {
+            this.fname = fname;
+            this.lname = lname;
+        }
+
+        let user = new Person("Ross" , "Geller");
+        console.log(user.fname + " " + user.lname);
+
+        let user1 = new Person("Moody", "Jazz");
+        user.age = 21;  //adding a key:value in normal object
+        console.log(user.age);
+
+        Person.prototype.age = 33; //adding a key:value in a constructor
+
+        console.log(user.age + " ; " + user1.age);
+    </script>
+</body>
+</html>

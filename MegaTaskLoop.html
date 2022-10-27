@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mega Loop</title>
+</head>
+
+<body>
+    <h1>Mega Loop</h1>
+    
+
+    <script>
+        // 1> print numbers
+        var x = 1;
+        while (x <= 5) {
+            console.log("Numbers are: " + x);
+            x++;
+        }
+
+        var x = 1;
+        do {
+            console.log(x);
+            x++;
+        } while (x <= 5);
+
+        for (var x = 1; x <= 5; x++) {
+            console.log(x);
+        }
+
+        // 2> print numbers in reverse
+        var x = 5;
+        while (x >= 1) {
+            console.log("Numbers = " + x);
+            x--;
+        }
+
+        // 3> Alphabets from a to z & A to Z
+        var x = 65;
+        while (x >= 65 && x <= 90) {
+            console.log(String.fromCharCode(x));
+            x++;
+        }
+
+        var x = 97;
+        while (x <= 122 && x >= 97) {
+            console.log(String.fromCharCode(x));
+        }
+
+        // 4> Even Numbers
+        var x = 1;
+        while (x <= 10) {
+            if (x % 2 == 0) {
+                console.log("Even numbers are: " + x);
+            }
+            x++;
+        }
+
+        // 5> Odd Numbers
+        var x = 1;
+        while (x <= 10) {
+            if (x % 2 != 0) {
+                console.log("Odd numbers are: " + x);
+            }
+            x++;
+        }
+
+        // 6> Sum of Natural numbers
+        var x = 1, sum = 0;
+        while (x <= 10) {
+            sum = sum + x;
+            x++;
+        }
+        console.log("Sum of Natutral numbers = " + sum);
+
+        // 7> Sum of even numbers
+        var x = 2, sum = 0;
+        while (x <= 10) {
+            if (x % 2 == 0) {
+                sum = sum + x;
+            }
+            x++;
+        }
+        console.log("Sum of even numbers = " + sum);
+
+        // 8> Sum of odd numbers
+        var x = 1, sum = 0;
+        while (x <= 10) {
+            if (x % 2 != 0) {
+                sum = sum + x;
+            }
+            x++;
+        }
+        console.log("Sum of Odd numbers = " + sum);
+
+        // 9> Multiplication table of any number
+        var table = 5, x = 1;
+        while (x <= 10) {
+            console.log(table * x);
+            x++;
+        }
+
+        // 10> Count number of digits
+        var num = 220, count = 0;
+        while (num != 0) {
+            count++;
+            num = parseInt(num / 10);
+        }
+        console.log("number of digits: " + count);
+
+
+
+        // 11> Find first and last digit
+        var x = 2234, f, l;
+        l = x % 10;
+        while (x != 0) {
+            f = x % 10;
+            x = parseInt(x / 10);
+        }
+        console.log("first digit: " + f);
+        console.log("last digit: " + l);
+
+        // 12> Sum of first and last digits
+        var num = 1234577, sum = 0, f, d;
+        d = num % 10;
+        while (num != 0) {
+            f = num % 10;
+            num = parseInt(num / 10);
+        }
+        sum = sum + f + d;
+        console.log("Sum of first and last digits = " + sum);
+
+        // 13> Swap first and last digits
+
+        // 14> Sum of digits
+        var num = 12345, sum = 0, d;
+        while (num != 0) {
+            d = num % 10;
+            sum = sum + d;
+            num = parseInt(num / 10);
+        }
+        console.log("Sum of all digits = " + sum);
+
+        // 15> Product of digits of number
+        var num = 1235, prd = 1, d;
+        while (num != 0) {
+            d = num % 10;
+            prd = prd * d;
+            num = parseInt(num / 10);
+        }
+        console.log("Product of digits = " + prd);
+
+        // 16> Reverse a number
+        var num = 1234, rev = 0, d;
+        while (num != 0) {
+            d = num % 10;
+            rev = rev * 10 + d;
+            num = parseInt(num / 10);
+        }
+        console.log("Reverse is: " + rev);
+
+        // 17> Palindrome or not
+        var num = 122, num1 = num, rev = 0, d;
+        while (num != 0) {
+            d = num % 10;
+            rev = rev * 10 + d;
+            num = parseInt(num / 10);
+        }
+        if (rev == num1) {
+            console.log(num1 + " is a Palindrome");
+        } else {
+            console.log(num1 + " is not a Palindrome");
+        }
+
+        // var num = 121, num1 = num, rev = 0, d;
+        // do {
+        //     d = num % 10;
+        //     rev = rev * 10 + d;
+        //     num = parseInt(num / 10);
+        // } while (num != 0);
+        // if (num1 == rev) {
+        //     console.log(rev + " is a Palindrome");
+        // } else {
+        //     console.log(rev + " is not a Palindrome");
+        // }
+
+        var num1 = num, num = 121, rev = 0, d;
+        for (; (num != 0);) {
+            d = num % 10;
+            rev = rev * 10 + d;
+            num = parseInt(num / 10);
+        }
+        if (num1 == rev) {
+            console.log(rev + " is a Palindrome of " + num1);
+        } else {
+            console.log(rev + " is not a Palindrome of " + num1);
+        }
+
+        // 18> Frequency of digits in a number
+        // var num = 12331, d, c0 = 0, c1 = 0, c2 = 0, c3 = 0, c4 = 0, c5 = 0, c6 = 0, c7 = 0, c8 = 0, c9 = 0;
+        // while (num != 0) {
+        //     d = num % 10;
+        //     switch (d) {
+        //         case 0: c0++;
+        //         break;
+
+        //         case 1: c1++;
+        //         break;
+
+        //         case 2: c2++;
+        //         break;
+
+        //         case 3: c3++;
+        //         break;
+
+        //         case 4: c4++;
+        //         break;
+
+        //         case 5: c5++;
+        //         break;
+
+        //         case 6: c6++;
+        //         break;
+
+        //         case 7: c7++;
+        //         break;
+
+        //         case 8: c8++;
+        //         break;
+
+        //         case 9: c9++;
+        //         break;
+        //     }
+        //     num = parseInt(num / 10);
+        // }
+
+        // console.log("0 occured " + c0 + " times");
+        // console.log("1 occured " + c1 + " times");
+        // console.log("2 occured " + c2 + " times");
+        // console.log("3 occured " + c3 + " times");
+        // console.log("4 occured " + c4 + " times");
+        // console.log("5 occured " + c5 + " times");
+        // console.log("6 occured " + c6 + " times");
+        // console.log("7 occured " + c7 + " times");
+        // console.log("8 occured " + c8 + " times");
+        // console.log("9 occured " + c9 + " times");
+
+        // var num = 12331, d, c0 = 0, c1 = 0, c2 = 0, c3 = 0, c4 = 0, c5 = 0, c6 = 0, c7 = 0, c8 = 0, c9 = 0;
+        // do {
+        //     d = num % 10;
+        //     switch (d) {
+        //         case 0: c0++;
+        //         break;
+
+        //         case 1: c1++;
+        //         break;
+
+        //         case 2: c2++;
+        //         break;
+
+        //         case 3: c3++;
+        //         break;
+
+        //         case 4: c4++;
+        //         break;
+
+        //         case 5: c5++;
+        //         break;
+
+        //         case 6: c6++;
+        //         break;
+
+        //         case 7: c7++;
+        //         break;
+
+        //         case 8: c8++;
+        //         break;
+
+        //         case 9: c9++;
+        //         break;
+        //     }
+        //     num = parseInt(num / 10);
+        // } while (num != 0);
+        // console.log("0 occured " + c0 + " times");
+        // console.log("1 occured " + c1 + " times");
+        // console.log("2 occured " + c2 + " times");
+        // console.log("3 occured " + c3 + " times");
+        // console.log("4 occured " + c4 + " times");
+        // console.log("5 occured " + c5 + " times");
+        // console.log("6 occured " + c6 + " times");
+        // console.log("7 occured " + c7 + " times");
+        // console.log("8 occured " + c8 + " times");
+        // console.log("9 occured " + c9 + " times");
+
+        // 18> Frequency of numbers
+
+        var num = 12331, d, c0 = 0, c1 = 0, c2 = 0, c3 = 0, c4 = 0, c5 = 0, c6 = 0, c7 = 0, c8 = 0, c9 = 0;
+        for (; num != 0;) {
+            d = num % 10;
+            switch (d) {
+                case 0: c0++;
+                    break;
+
+                case 1: c1++;
+                    break;
+
+                case 2: c2++;
+                    break;
+
+                case 3: c3++;
+                    break;
+
+                case 4: c4++;
+                    break;
+
+                case 5: c5++;
+                    break;
+
+                case 6: c6++;
+                    break;
+
+                case 7: c7++;
+                    break;
+
+                case 8: c8++;
+                    break;
+
+                case 9: c9++;
+                    break;
+            }
+            num = parseInt(num / 10);
+        }
+        console.log("0 occured " + c0 + " times");
+        console.log("1 occured " + c1 + " times");
+        console.log("2 occured " + c2 + " times");
+        console.log("3 occured " + c3 + " times");
+        console.log("4 occured " + c4 + " times");
+        console.log("5 occured " + c5 + " times");
+        console.log("6 occured " + c6 + " times");
+        console.log("7 occured " + c7 + " times");
+        console.log("8 occured " + c8 + " times");
+        console.log("9 occured " + c9 + " times");
+
+        // 19> Print words from numbers
+        // var num = 11233, rev = 0, d;
+        // while (num != 0) {
+        //     d = num % 10;
+        //     rev = rev * 10 + d;
+        //     num = parseInt(num / 10);
+        // }
+        // while (rev != 0) {
+        //     d = rev % 10;
+        //     switch(d) {
+        //         case 0: console.log("zero ");
+        //         break;
+
+        //         case 1: console.log("one ");
+        //         break;
+
+        //         case 2: console.log("two ");
+        //         break;
+
+        //         case 3: console.log("three ");
+        //         break;
+
+        //         case 4: console.log("four ");
+        //         break;
+
+        //         case 5: console.log("five ");
+        //         break;
+
+        //         case 6: console.log("six ");
+        //         break;
+
+        //         case 7: console.log("seven ");
+        //         break;
+
+        //         case 8: console.log("eight ");
+        //         break;
+
+        //         case 9: console.log("nine ");
+        //         break;
+        //     }
+        //     rev = parseInt(rev / 10);
+        // }
+
+        // var num = 122334, d, rev = 0;
+        // do {
+        //     d = num % 10;
+        //     rev = rev * 10 + d;
+        //     num = parseInt(num / 10);
+        // } while (num != 0);
+        // do {
+        //     d = rev % 10;
+        //     switch(d) {
+        //         case 0: console.log("zero ");
+        //         break;
+
+        //         case 1: console.log("one ");
+        //         break;
+
+        //         case 2: console.log("two ");
+        //         break;
+
+        //         case 3: console.log("three ");
+        //         break;
+
+        //         case 4: console.log("four ");
+        //         break;
+
+        //         case 5: console.log("five ");
+        //         break;
+
+        //         case 6: console.log("six ");
+        //         break;
+
+        //         case 7: console.log("seven ");
+        //         break;
+
+        //         case 8: console.log("eight ");
+        //         break;
+
+        //         case 9: console.log("nine ");
+        //         break;
+        //     }
+        //     rev = parseInt(rev / 10);
+        // } while (rev != 0);
+
+        var num = 12334, rev = 0, d;
+        for (; (num != 0);) {
+            d = num % 10;
+            rev = rev * 10 + d;
+            num = parseInt(num / 10);
+        }
+        for (; (rev != 0);) {
+            d = rev % 10;
+            switch (d) {
+                case 0: console.log("zero ");
+                    break;
+
+                case 1: console.log("one ");
+                    break;
+
+                case 2: console.log("two ");
+                    break;
+
+                case 3: console.log("three ");
+                    break;
+
+                case 4: console.log("four ");
+                    break;
+
+                case 5: console.log("five ");
+                    break;
+
+                case 6: console.log("six ");
+                    break;
+
+                case 7: console.log("seven ");
+                    break;
+
+                case 8: console.log("eight ");
+                    break;
+
+                case 9: console.log("nine ");
+                    break;
+            }
+            rev = parseInt(rev / 10);
+        }
+
+
+        // 20> Print ASCII numbers with values
+        // var x = 1;
+        // while (x <= 127) {
+        //     console.log(x + " = " + String.fromCharCode(x));
+        //     x++;
+        // }
+
+        // var x = 1;
+        // do {
+        //     console.log(x + " = " + String.fromCharCode(x));
+        //     x++;
+        // } while (x <= 127);
+
+        // var x = 1;
+        // for (; (x <= 127); x++) {
+        //     console.log(x + " = " + String.fromCharCode(x));
+        // }
+
+        // 21> Power of number
+        var x = 3, y = 3, pow = 1;
+        var num = 1;
+        for (; (num <= y); num++) {
+            pow = pow * x;
+        }
+        console.log("Power is " + pow);
+
+        var num = 1, x = 2, y = 3, pow = 1;
+        while (num <= y) {
+            pow = pow * x;
+            num++;
+        }
+        console.log(pow);
+
+        var num = 1, x = 3, y = 4, pow = 1;
+        do {
+            pow = pow * x;
+            num++;
+        } while (num <= y);
+        console.log("Result is: " + pow);
+
+        // 22> Print Factors of a number
+        var num = 15, x = 2;
+        while (x < num) {
+            if (num % x == 0) {
+                console.log(x + " is a factor");
+            }
+            x++;
+        }
+
+        var num = 30, x = 2;
+        do {
+            if (num % x == 0) {
+                console.log('Factor of ' + num + " : " + x);
+            }
+            x++;
+        } while (x < num);
+
+        var num = 45, x = 1;
+        for (; (x < num);) {
+            if (num % x == 0) {
+                console.log(x);
+            }
+            x++;
+        }
+
+        // 23> Print factorial
+        var num = 4, x = 1, ftl = 1;
+        while (x <= num) {
+            ftl = x * ftl;
+            x++;
+        }
+        console.log("Factorial = " + ftl);
+
+        // 24> HCF
+        var x = 20, y = 24, i = 2, hcf;
+        while (i < x) {
+            if (x % i == 0 && y % i == 0) {
+                hcf = i;
+            }
+            i++;
+        }
+        console.log(hcf + " is the HCF");
+
+        // 25> LCM
+        var x = 20, y = 24, i = (y + 1), lcm;
+        while (i <= (x * y)) {
+            if (i % x == 0 && i % y == 0) {
+                lcm = i;
+                break;
+            }
+            i++;
+        }
+        console.log("LCM = " + lcm);
+
+        // 26> Prime number or not
+        var x = 27, i = 2;
+        while (i < x) {
+            if (x % i == 0) {
+                console.log(x + " is not a Prime number");
+                break;
+            }
+            i++;
+        }
+        if (i == x) {
+            console.log("Prime Number: " + x);
+        }
+
+        // 27> print Prime number
+        var j = 1;
+        while (j <= 100) {
+            num = j, i = 2;
+
+            while (i < num) {
+                if (num % i == 0) {
+                    break;
+                }
+                i++;
+            }
+            if (i == num) {
+                console.log("Prime Number: " + i);
+            }
+
+            j++;
+        }
+
+        // 28> sum of Prime numbers
+        var j = 1, sum = 0;
+        while (j <= 10) {
+            num = j, i = 2;
+
+            while (i < num) {
+                if (num % i == 0) {
+                    break;
+                }
+                i++;
+            }
+            if (i == num) {
+                console.log("Prime Number: " + i);
+                sum = sum + i;
+            }
+
+            j++;
+        }
+        console.log("sum of prime numbers = " + sum);
+
+        // 29> print Prime number from factors
+        var num = 15, x = 1;
+        while (x < num) {
+            if (num % x == 0) {
+                console.log("Factor of " + num + " is " + x);
+
+                var z = i, j = 2;
+                while (j < z) {
+                    if (z % j == 0) {
+                        break;
+                    }
+                    j++;
+                }
+                if (j == z) {
+                    console.log("Prime number: " + j);
+                }
+            }
+            x++;
+        }
+
+        // 30> Armstrong Number
+        // var x = 153, num = x, sum = 0;      // 153, 370, 371, 407
+        // while (x != 0) {
+        //     fd = x % 10;
+        //     sum = sum + fd*fd*fd;
+        //     x = parseInt(x / 10);
+        // }
+        // if (sum == num) {
+        //     console.log("Armstrong number: " + sum);
+        // } else {
+        //     console.log("Not an Armstrong number");
+        // }
+
+        do {
+            fd = x % 10;
+            sum = sum + (fd * fd * fd);
+            x = parseInt(x / 10);
+        } while (x != 0);
+        if (sum == num) {
+            console.log("Armstrong number: " + sum);
+        } else {
+            console.log("Not an Armstrong number");
+        }
+
+        // 32> Perfect number
+        var num = 6, sum = 0, x = 1;
+        while (x < num) {
+            if (num % x == 0) {
+                sum = sum + x;
+            }
+            x++;
+        }
+        if (sum == num) {
+            console.log("It is a Perfect number");
+        } else {
+            console.log("It is not a Perfect number");
+        }
+
+    </script>
+</body>
+</html>

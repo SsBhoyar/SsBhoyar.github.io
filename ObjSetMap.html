@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SetMap</title>
+</head>
+
+<body>
+    <h1>Object Set & Map</h1>
+
+    <p>Set (cannot have repeating elements) = Array (can have repeating elements)</p>
+    forEach loop can run on Set
+    <p>Map = Object</p>
+
+    <script>
+        //Array = Set
+        let fruits = new Set(["Apple", "Mango", "Banana", "Apple"]);
+        console.log(fruits.size);
+
+        fruits.forEach((val, index, array) => {
+            console.log(val, index, array);
+        })
+
+        for (let x of fruits.values()) {
+            console.log(x);
+        }
+
+        fruits.add("Jamun");
+
+        fruits.delete("Apple");
+
+        console.table(fruits);
+
+
+        //Map = Objects
+        let fruit = new Map([
+            ["Apple", 200],
+            ["Banana", 300],
+            ["Kiwi", 500]
+        ]);
+
+        fruit.set("Orange", 200);
+        console.log("Kiwi is priced at " + fruit.get("Kiwi"));
+
+        fruit.forEach(val => 
+            console.log(val)
+        )
+
+        for (let x of fruit.entries()) {
+            console.table4(x);
+        }
+    </script>
+</body>
+
+</html>

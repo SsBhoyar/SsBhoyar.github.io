@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constructor</title>
+</head>
+<body>
+    <h1>Class Constructor</h1>
+
+    <script>
+        //creating a class that consists various functions
+        class Student{
+            subject;
+
+            constructor(x) {
+                this.subject = x;
+            }
+
+            show() {
+                console.log(this.subject);
+            }
+        }
+
+        //Assigning new variables with Class name and parameters
+        let s1 = new Student("Hindi");
+        let s2 = new Student("English");
+
+        //calling functions
+        s1.show();
+        s2.show();
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=B, initial-scale=1.0">
+    <title>Array Task</title>
+</head>
+
+<body>
+
+    <div class="box">
+
+        <h3>Enter your name</h3>
+        <input type="text" id="ip1">
+        <button onclick="add1()">Add +</button><br>
+        <span>Your list is:</span>
+        <p id="list1"></p>
+
+        <h3>Enter your name</h3>
+        <input type="text" id="ip2">
+        <input type="text" id="ip3">
+        <Button onclick="add2()">Add +</Button><br>
+        <span>Your updated list is:</span>
+        <p id="list2"></p>
+
+    </div>
+
+    <script>
+        // Part-1
+        const name1 = [];
+        function add1() {
+            var x = document.getElementById("ip1").value;
+            name1.push(x);
+            var i = "";
+            i += "<ul>";
+            for (j of name1) {
+                i += "<li>" + j + "</li>";
+            }
+            i += "</ul>";
+            document.getElementById("list1").innerHTML = i;
+            document.getElementById("ip1").value = "";
+        }
+
+        // Part-2
+        const name2 = ["asd", "jdi", "fgh"];
+        var w = name2.toString();
+        w = "";
+        w += "<ul>";
+            for (z of name2) {
+                w += "<li>" + z + "</li>";
+            }
+        w += "</ul>";
+        document.getElementById("list2").innerHTML = w;
+
+        function add2() {
+            var a = document.getElementById("ip2").value;
+            var b = parseInt(document.getElementById("ip3").value);
+            w = name2.splice(b, 1, a);
+            w = "";
+            w += "<ul>";
+            for (z of name2) {
+                w += "<li>" + z + "</li>";
+            }
+            w += "</ul>";
+            document.getElementById("list2").innerHTML = w;
+        }
+    </script>
+</body>
+
+</html>

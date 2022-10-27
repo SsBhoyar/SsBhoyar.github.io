@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Sort Task</title>
+</head>
+
+<body>
+    <h1>Sort the list</h1>
+
+    <button onclick="asc()">Ascending</button>
+    <button onclick="dsc()">Descending</button>
+    <button onclick="rdm()">Random</button>
+    <br>
+    <p id="result"></p>
+
+    <br><hr><br>
+
+    <h1>Calculate your Age</h1>
+
+    <input type="date" id="dob">
+    <button onclick="calc()">Calculate</button>
+    <br><br>
+    <span>Your Age is:</span>
+    <p id="age">  </p>
+
+
+    <script>
+
+        // Task-1
+        const fruits = ["Orange" , "Mango" , "Kiwi" , "Banana" , "Apple"];
+        let str = fruits.toString();
+        str = "";
+        str += "<ul>";
+            for (x of fruits) {
+                str += "<li>" + x + "</li>";
+            }
+        str += "</ul>";
+        document.getElementById("result").innerHTML = str;
+
+        function asc() {
+            str += fruits.sort();
+            str = "";
+            str += "<ul>";
+            for (x of fruits) {
+                str += "<li>" + x + "</li>";
+            }
+            str += "</ul>";
+            document.getElementById("result").innerHTML = str;
+        }
+
+        function dsc () {
+            str += fruits.reverse();
+            str = "";
+            str += "<ul>";
+            for (x of fruits) {
+                str += "<li>" + x + "</li>";
+            }
+            str += "</ul>";
+            document.getElementById("result").innerHTML = str;
+        }
+
+        function rdm() {
+            str += fruits.sort(function(a , b){return 0.5 - Math.random()});
+            str = "";
+            str += "<ul>";
+            for (x of fruits) {
+                str += "<li>" + x + "</li>";
+            }
+            str += "</ul>";
+            document.getElementById("result").innerHTML = str;
+        }
+
+
+        //Task-2
+
+        function calc() {
+            let w =document.getElementById("dob").value;
+        
+            a = new Date();
+            b = new Date(w);
+            c = a.getFullYear() - b.getFullYear();
+            // d = getFullYear(c);
+            document.getElementById("age").innerHTML = c;
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array & Objects</title>
+</head>
+
+<body>
+    <h1>Array and Objects</h1>
+
+    <script>
+        //OBJECTS
+        //  var person = {"fname": "John", "lname": "Doe", "Age": 33, "city": "London"};
+        // console.log(person.fname);
+        // console.log(person["lname"]);
+
+        //ARRAY
+        // let fruits = ["Apple", "Mango", "Banana", "Kiwi"];
+        // console.log(fruits[0]);
+        // console.log(fruits[3]);
+
+        // Loops only work with Arrays, not objects
+        // var x = 0;
+        // while (x <= 3) {
+        //     console.log(fruits[x]);
+        //     x++;
+        // }
+
+    //foreach Loop
+        //doesn't work on objects, only array
+        // var person = {"fname": "John", "lname": "Doe", "Age": 33, "city": "London"};
+        // person.forEach(myfun)
+
+        // var fruits = ["Apple", "Mango", "Banana", "Kiwi"];
+        //  function myfun(val, index, arr) {
+        //   console.log(val);
+        //  }
+
+
+
+        // var fruits = ["apple" , "mango" , "banana" , "kiwi"]       
+        // fruits.forEach(myfun);       //method 1: needs name
+        // function myfun(val, index, arr) {
+        //     console.log(val);
+        // }
+
+        // var fruits = ["apple", "mango", "banana", "kiwi"] //anonymous function, doesnt need a name
+        // fruits.forEach(function (val, index, arr) {  
+        //     console.log(val);
+        // })
+
+    //forin Loop  //works with both objects and arrays
+        // var person = { "fname": "John", "lname": "Doe", "Age": 33, "city": "London" };
+        // for (var x in person) {
+        //     console.log(x);
+        //     console.log(person[x]);
+        // }
+
+        // var fruits = ["apple", "mango", "banana", "kiwi"]
+        // for (var x in fruits) {
+        //     console.log(x);
+        //     console.log(fruits[x]);
+        // }
+
+    // forof Loop  //works with array only
+        var fruits = ["apple", "mango", "banana"]
+        for (var x of fruits) {
+            console.log(x);
+        }
+
+    //Object-Array
+        let objarr = [
+            {"fname" : "John" , "lname" : "Doe" , "age" : 33},
+            {"fname" : "Rohit" , "lname" : "Shetty" , "age" : 25},
+            {"fname" : "Sunil" , "lname" : "Datt" , "age" : 55},
+            {"fname" : "Aman" , "lname" : "Khan" , "age" : 22}
+        ];
+
+        console.log(objarr[1].lname);
+        console.log(objarr[0].age);
+        console.log(objarr[3].fname);
+
+        for (x = 0; (x <= 3); x++) {
+            console.log(objarr[x].fname + " " + objarr[x].lname);
+        }
+
+    </script>
+</body>
+
+</html>

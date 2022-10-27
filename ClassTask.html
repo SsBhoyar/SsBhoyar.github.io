@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Class Task (Heirarchial)</title>
+</head>
+
+<body>
+    <h1>CLASS TASK</h1>
+
+    <script>
+        class Staff {
+            constructor(code , name) {
+                console.log("STAFF ~ Code is " + code + " Name is " + name);
+            };
+        }
+
+        class Teacher extends Staff {
+            constructor(code , name , subject) {
+                super(code , name);
+                console.log("Teacher will teach: " + subject);
+            }
+        }
+
+        class Typist extends Staff {
+            constructor(code , name , speed) {
+                super(code , name);
+                console.log("Typist types at a speed of "  + speed + "wpm");
+            }
+        }
+
+        class Regular extends Typist {
+            constructor(code , name , speed,  payment) {
+                super(code , name, speed);
+                console.log("Payment for regular typer is: " + payment);
+            }
+        }
+
+        class Permanent extends Typist {
+            constructor(code , name , speed,  salary) {
+                super(code , name, speed);
+                console.log("Salary for permanent typer is: " + salary);
+            }
+        }
+
+        class Officer extends Staff {
+            constructor(code , name , grade) {
+                super(code , name);
+                console.log("Grade of the  Officer is " + grade);
+            }
+        }
+
+        console.log(" ");
+
+        // let st = new Staff(102 , "DEF");
+        console.log("Teacher Details ");
+        let tch = new Teacher(101 , "ABC" , "English");
+        console.log("Regular Details ");
+        // let typ = new Typist(102 , "DEF" , 25);
+        let reg  = new Regular(102 , "DEF" , 25 , 15,000);
+        let prm = new Permanent(102 , "GHI" , 50 , 20,000);
+        console.log("Officer ");
+        let off = new  Officer(103 , "JKL" , "B+");
+
+    </script>
+</body>
+
+</html>

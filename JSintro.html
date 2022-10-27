@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Intro</title>
+
+    <script src="demo.js"></script>
+</head>
+
+<body>
+    <p id="demo">Hello!!!</p>
+    <p id="para">This is a paragraph</p>
+    <button onclick="show()" style="border-radius:5px; padding: 10px;">Click!!</button>
+    <br>
+    <hr>
+
+    <img src="img_car.jpg" alt="" id="myimg" width="200px" height="auto"><br>
+    <button onclick="chngimg()" style="border-radius:5px; padding: 10px;">Click here!!</button>
+    <br>
+    <hr>
+
+
+    <button onclick="disp()" style="border-radius:5px; padding: 10px;">Click@@@!</button>
+    <br>
+    <hr>
+
+
+    <!-- INLINE JAVASCRIPT -->
+
+    <p id="mypara" style="background-color: powderblue; padding: 10px; display: inline-block;">Text...</p>
+    <button onclick="document.getElementById('mypara').innerHTML = 'Inline JavaScript!!'"
+        style="border-radius:5px; padding: 10px; background-color: purple; color: white;">Click Me!!</button>
+
+    <!-- External JS -->
+    <button onclick="display()" style="border-radius:5px; padding: 10px;">External JS</button><br>
+    <br>
+    <hr>
+
+    <!-- INTERNAL JAVASCRIPT -->
+    <script>
+        document.getElementById("demo").innerHTML = "Changed by JavaScript";
+
+        function show() {
+            document.getElementById("para").innerHTML = "Changed After Click";
+            document.getElementById("para").style.color = "white";
+            document.getElementById("para").style.backgroundColor = "black";
+            document.getElementById("para").style.padding = "10px";
+        }
+
+        function chngimg() {
+            document.getElementById("myimg").src = "tree.jpg";
+        }
+
+        document.write("First Document")
+        function disp() {
+            // alert('Hello JS');
+            console.log("This is Console Log");
+            document.write("Second Document");
+        }
+    </script>
+</body>
+
+</html>

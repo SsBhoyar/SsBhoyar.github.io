@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Class</title>
+</head>
+<body>
+    <h1>JS Class</h1>
+
+    <script>
+        // class Demo {            //Always name the class Capitalised
+        //     x;                  //don't use variable terms (var, let, const)
+        //     y;
+        //     show() {            //don't write function keyword when declaring functions
+        //         this.x = 10;
+        //         console.log(this.x);
+        //     }
+        // }
+           
+        // //Class doesn't work until it's turned into an Object
+        // let d1 = new Demo();    // initialise the object with Class name
+        // d1.show();              //call function inside the class using the new objects
+        
+
+        class Demo1 {
+            x;
+            y;
+            z;
+            getdt(a , b) {
+                this.x = a;
+                this.y = b;
+            }
+            // show() {
+            //     console.log("x : " + this.x);
+            //     console.log("y : " + this.y);
+            // }
+            add() {
+              let z = this.x + this.y;
+                console.log(z);
+            }
+            sub() {
+                let z = this.x - this.y;
+                console.log(z);
+            }
+            mult() {
+                let z = this.x * this.y;
+                console.log(z);
+            }
+            div() {
+                let z = this.x / this.y;
+                console.log(z);
+            }
+        }
+
+        let d2 = new Demo1();
+        let d3 = new Demo1();
+
+        d2.getdt(20 , 14);
+        d3.getdt(3 , 8);
+        // d2.show();
+        // d3.show();
+        d2.add();
+        d3.add();
+        d2.sub();
+        d3.sub();
+        d2.mult();
+        d3.mult();
+        d2.div();
+        d3.div();
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Calculator</title>
+</head>
+
+<body>
+
+    <input type="text" id="num1">
+    <input type="text" id="num2">
+
+<br><br>
+    <button onclick="add()" style="border-radius:5px; padding: 10px;">Add</button>&nbsp &nbsp
+    <button onclick="subt()" style="border-radius:5px; padding: 10px;">Subtract</button>&nbsp &nbsp
+    <button onclick="mult()" style="border-radius:5px; padding: 10px;">Multiply</button>&nbsp &nbsp
+    <button onclick="dvid()" style="border-radius:5px; padding: 10px;">Divide</button>
+
+
+    <p id="result"></p>
+
+    <script>
+
+        function add() {
+            var x, y, z;
+            x = parseInt(document.getElementById("num1").value);
+            y = parseInt(document.getElementById("num2").value);
+            z = x + y;
+            
+            document.getElementById("result").innerHTML = "Addition is: " + z;
+        }
+
+        function subt() {
+            var x, y, z;
+            x = parseInt(document.getElementById("num1").value);
+            y = parseInt(document.getElementById("num2").value);
+            z = x - y;
+
+            document.getElementById("result").innerHTML = "Difference is: " + z;
+        }
+
+        function mult() {
+            var x, y ,z;
+            x = parseInt(document.getElementById("num1").value);
+            y = parseInt(document.getElementById("num2").value);
+            z = x * y;
+
+            document.getElementById("result").innerHTML = "Product is: " + z;
+        }
+
+        function dvid(){
+            var x,y,z;
+            x = parseInt(document.getElementById("num1").value);
+            y = parseInt(document.getElementById("num2").value);
+            z = x / y;
+
+            document.getElementById("result").innerHTML = "Division is: " + z;
+        }
+
+    </script>
+
+</body>
+
+</html>

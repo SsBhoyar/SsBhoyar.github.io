@@ -1,0 +1,345 @@
+<html>
+
+<head>
+
+    <title> Form </title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</head>
+
+<body class="">
+
+
+    <div class="text-center fs-1">Validation Form</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <input type="date" id="enterdob" class="form-control  float-start ">
+                <div id="showrst"></div>
+            </div>
+            <div class="col-4"> <button type="button" class="btn btn-outline-warning btn-lg ms-5"
+                    onclick="showform()">Verify</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="ms-5 mt-5 container" style="display: none;" id="2form">
+
+        <div class="row m-5">
+            <div class="col-4">
+                <label for="validationCustom01" class="fs-2 fw-bolder ">Name :</label>
+            </div>
+
+            <div class="col-8">
+                <input type="text" class="form-control col-xl-5 w-40 h-70 p-1" id="validationCustom01"
+                    onblur="nameFunction()" required>
+                <div class="" id="validname"></div>
+            </div>
+        </div>
+        <div class="row m-5">
+            <div class="col-4">
+                <label for="validationCustom01" class="fs-2 fw-bolder ">Mobile No :</label>
+            </div>
+
+            <div class="col-8">
+                <input type="text" class="form-control col-xl-5 w-40 h-70 p-1" id="validationCustom02"
+                    onblur="numberFunction()" required>
+                <div class="" id="validnum"></div>
+            </div>
+        </div>
+        <div class="row m-5">
+            <div class="col-4">
+                <label for="validationCustom01" class="fs-2 fw-bolder ">Email :</label>
+            </div>
+
+            <div class="col-8">
+                <input type="text" class="form-control col-xl-5 w-40 h-70 p-1" id="validationCustom03"
+                    onblur="emailFunction()" required>
+                <div class="text-danger" id="validmail"></div>
+            </div>
+        </div>
+        <div class="row m-5">
+            <div class="col-4">
+                <label for="validationCustom01" class="fs-2 fw-bolder ">Password :</label>
+            </div>
+
+            <div class="col-8">
+                <input type="text" class="form-control w-40 h-70 p-1" id="validationCustom04" onblur="passfunction()"
+                    required>
+                <div class="text-danger" id="validpassword"></div>
+            </div>
+        </div>
+        <div class="row m-5">
+            <div class="col-4">
+                <label for="validationCustom01" class="fs-2 fw-bolder ">Confirm Password :</label>
+            </div>
+
+            <div class="col-8">
+                <input type="text" class="form-control w-40 h-70 p-1" id="validationCustom05" onblur="confFunction()"
+                    required>
+                <div class="text-danger" id="confpassword"></div>
+            </div>
+
+        </div>
+
+        <div class="row m-5">
+            <div class="col-4">
+                <label for="validationCustom01" class="fs-2 fw-bolder ">State :</label>
+            </div>
+            <div class="col-8" onload="stateonload()">
+                <select class="form-select" aria-label="Default select example" id="selectstate" onchange="makesubmenu(this.value)">
+                </select>
+            </div>
+        </div>
+
+        <div class="row m-5">
+            <div class="col-4">
+                <label for="" class="fs-2 fw-bolder">City : </label>
+            </div>
+            <div class="col-8">
+                <select name="" id="selectcity" class="form-select"></select>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <!-------2nd Form------->
+
+
+    <!-- <div class="container" >
+        <div class="row">
+            <div class="col-4">
+                <label for="exampleInputEmail1" class="form-label">Name :</label>
+            </div>
+            <div class="col-8">
+                <input type="text" class="form-control" id="enterdob">
+            </div>
+            <div id="showrst"></div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-4">
+                <label for="exampleInputEmail1" class="form-label">Email :</label>
+            </div>
+            <div class="col-8">
+                <input type="text" class="form-control" id="exampleInputEmail1">
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-4">
+                <label for="exampleInputEmail1" class="form-label">Mobile No :</label>
+            </div>
+            <div class="col-8">
+                <input type="text" class="form-control" id="exampleInputEmail1">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-4">
+                <label for="exampleInputEmail1" class="form-label">State :</label>
+
+            </div>
+            <div class="col-8">
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Select State</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                    <option value="Madhya Pradesh">Madhya Pradesh</option>
+                    <option value="Haryana">Haryana</option>
+                </select>
+            </div>
+        </div>
+    </div> -->
+
+    <script>
+
+        // Name Function
+        function nameFunction() {
+            var user = document.getElementById('validationCustom01').value;
+            var re = /^[a-zA-Z\. ]+$/;
+            if (re.test(user)) {
+                document.getElementById('validname').innerHTML = "Valid Name";
+                document.getElementById('validname').classList.add("text-white");
+                document.getElementById('validname').classList.remove("text-danger");
+                document.getElementById('validationCustom01').classList.add("is-valid");
+                document.getElementById('validationCustom01').classList.remove("is-invalid");
+            }
+            else {
+                document.getElementById('validname').innerHTML = "Please Enter Valid Name";
+                document.getElementById('validname').classList.remove("text-white");
+                document.getElementById('validname').classList.add("text-danger");
+                document.getElementById('validationCustom01').classList.remove("is-valid");
+                document.getElementById('validationCustom01').classList.add("is-invalid");
+            }
+        }
+
+
+        // Number Function
+        function numberFunction() {
+            var numuser = document.getElementById('validationCustom02').value;
+            var numre = /^[789]\d{9}$/;
+            if (numre.test(numuser)) {
+                document.getElementById('validnum').innerHTML = "Valid Number";
+                document.getElementById('validnum').classList.add("text-white");
+                document.getElementById('validnum').classList.remove("text-danger");
+                document.getElementById('validationCustom02').classList.add("is-valid");
+                document.getElementById('validationCustom02').classList.remove("is-invalid");
+            }
+            else {
+                document.getElementById('validnum').innerHTML = "Please Enter Valid Number";
+                document.getElementById('validnum').classList.remove("text-white");
+                document.getElementById('validnum').classList.add("text-danger");
+                document.getElementById('validationCustom02').classList.remove("is-valid");
+                document.getElementById('validationCustom02').classList.add("is-invalid");
+            }
+        }
+
+
+        // Email Function
+        function emailFunction() {
+            var mailuser = document.getElementById('validationCustom03').value;
+            var mailre = /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/;
+            if (mailre.test(mailuser)) {
+                document.getElementById('validmail').innerHTML = "Valid Email";
+                document.getElementById('validmail').classList.add("text-white");
+                document.getElementById('validmail').classList.remove("text-danger");
+                document.getElementById('validationCustom03').classList.add("is-valid");
+                document.getElementById('validationCustom03').classList.remove("is-invalid");
+            }
+            else {
+                document.getElementById('validmail').innerHTML = "Please Enter Valid Email";
+                document.getElementById('validmail').classList.remove("text-white");
+                document.getElementById('validmail').classList.add("text-danger");
+                document.getElementById('validationCustom03').classList.remove("is-valid");
+                document.getElementById('validationCustom03').classList.add("is-invalid");
+            }
+        }
+
+        // Password Function
+        var passre = /(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/;
+        function passfunction() {
+            var passuser = document.getElementById('validationCustom04').value;
+            var passre = /(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/;
+            if (passre.test(passuser)) {
+                document.getElementById('validpassword').innerHTML = "Valid Password";
+                document.getElementById('validpassword').classList.add("text-white");
+                document.getElementById('validpassword').classList.remove("text-danger");
+                document.getElementById('validationCustom04').classList.add("is-valid");
+                document.getElementById('validationCustom04').classList.remove("is-invalid");
+            }
+            else {
+                document.getElementById('validpassword').innerHTML = "Please Enter Valid Password";
+                document.getElementById('validpassword').classList.remove("text-white");
+                document.getElementById('validpassword').classList.add("text-danger");
+                document.getElementById('validationCustom04').classList.remove("is-valid");
+                document.getElementById('validationCustom04').classList.add("is-invalid");
+            }
+        }
+
+        // Confirm Password
+        function confFunction() {
+            var confuser = document.getElementById('validationCustom05').value;
+            var passuser = document.getElementById('validationCustom04').value;
+
+            if (confuser == passuser) {
+                document.getElementById('confpassword').innerHTML = "Password Has Matched";
+                document.getElementById('confpassword').classList.add("text-white");
+                document.getElementById('confpassword').classList.remove("text-danger");
+                document.getElementById('validationCustom05').classList.add("is-valid");
+                document.getElementById('validationCustom05').classList.remove("is-invalid");
+            }
+            else {
+                document.getElementById('confpassword').innerHTML = "Please Check Password";
+                document.getElementById('confpassword').classList.remove("text-white");
+                document.getElementById('confpassword').classList.add("text-danger");
+                document.getElementById('validationCustom05').classList.remove("is-valid");
+                document.getElementById('validationCustom05').classList.add("is-invalid");
+            }
+
+        }
+
+
+
+        // 2nd Form
+        function showform() {
+            let dob = document.getElementById("enterdob").value;
+            dob = new Date(dob);
+            let current_date = new Date();
+            let current_year = current_date.getFullYear();
+            console.log(current_year);
+            let dob_year = dob.getFullYear();
+            let age = current_year - dob_year;
+
+            if (age >= 18) {
+                document.getElementById('showrst').innerHTML = "Congratulations you are eligible";
+                document.getElementById('2form').style.display = "block";
+            }
+            else {
+                document.getElementById('2form').style.display = "none";
+                document.getElementById('showrst').innerHTML = "Your Are Not Eligible";
+                // document.getElementById('showrst').innerHTML = "";
+            }
+        }
+
+
+
+        // city state
+
+        var stateobj = {
+            "Maharashtra": ["Mumbai", "Pune", "Nagpur", "Nashik", "Aurangabad"],
+            "Madhya_Pradesh": ["Indore", "Bhopal", "Jabalpur", "Chhindwara", "Khandwa"],
+            "Kerala": ["Kochi", "Kozhikode", "Thrissur", "Malappuram", "Thiruvananthapuram"],
+            "Uttar_Pradesh": ["Kanpur", "Lucknow", "Ghaziabad", "Agra", "Aligarh"],
+            "Telangana": ["Hyderabad", "Warangal", "Nizamabad", "Khammam"]
+        }
+        let strstate = "<option>Seelct State</option>";
+        for(let state in stateobj){
+            strstate += `<option value="${state}">${state}</option>`;
+        }
+        document.getElementById("selectstate").innerHTML = strstate;
+
+        function makesubmenu(state){
+            let mycities = "<option>Select City</option>";
+            for(let city of stateobj[state]){
+                mycities += `<option value="${city}">${city}</option>`;
+                
+            }
+            document.getElementById("selectcity").innerHTML = mycities;
+        }
+        // function makesubmenu(value) {
+        //     if (value.length == 0)
+        //         document.getElementById('selectcity').innerHTML = "<option></option>";
+        //     else {
+        //         var citiesOption = "";
+        //         for (cityId in citiesByState[value]) {
+        //             citiesOption += "<option>" + citiesByState[value][cityId] + "</option>";
+        //         }
+        //         document.getElementById('selectcity').innerHTML = citiesOption;
+        //     }
+        // }
+        // function stateonload() {
+        //     document.getElementById('selectstate').selectedIndex = 0;
+        //     document.getElementById('selectcity').selectedIndex = 0;
+        // }
+
+    </script>
+
+
+    </script>
+
+</body>
+
+</html>

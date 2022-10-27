@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Example</title>
+
+    <style>
+        table,
+        tr,
+        th,
+        td {
+            border: 2px solid rgb(7, 7, 138);
+            padding: 4px 8px;
+            font-family: sans-serif;
+            text-align: center;
+            border-collapse: collapse;
+            background-color: rgb(247, 218, 182);
+        }
+        th {
+            border: 2px solid black;
+            background-color: rgb(231, 231, 81);
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th>User ID</th>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Body</th>
+        </tr>
+        <tbody id="mydt"></tbody>
+    </table>
+
+
+    <br>
+
+
+    <table>
+        <tr>
+            <th>User ID</th>
+            <th>ID</th>
+            <th>Title</td>
+        </tr>
+        <tbody id="mydt1"></tbody>
+    </table>
+
+    <script>
+        var obj = [
+            { "uid": 0, "id": 0, "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderi", "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto" },
+            { "uid": 1, "id": 1, "title": "qui est esse", "body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla" },
+            { "uid": 2, "id": 2, "title": "ea molestias quasi", "body": "spernatur corporis harum nihil quis provident sequi\nmollitia nobis aliquid molestiae\nperspiciatis e" },
+            { "uid": 3, "id": 3, "title": "um et est occaec", "body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nullaspernatur corporis harum nihil quis provident sequi\nmollitia nobis aliquid molestiae\nperspiciatis equia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto" },
+            { "uid": 4, "id": 4, "title": "nesciunt quas odio", "body": "spernatur corporis harum nihil quis provident sequi\nmollitia nobis aliquid molestiae\nperspiciatis equia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto" },
+            { "uid": 5, "id": 5, "title": "m eum magni eos aperiam qu", "body": "spernatur corporis harum nihil quis provident sequi\nmollitia nobis aliquid molestiae\nperspiciatis equia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto" },
+            { "uid": 6, "id": 6, "title": "magnam facilis au", "body": "spernatur corporis harum nihil quis provident sequi\nmollitia nobis aliquid molestiae\nperspiciatis equia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto" },
+            { "uid": 7, "id": 7, "title": "olorem dolore est ips", "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto" },
+            { "uid": 8, "id": 8, "title": "esciunt iure omnis dolore", "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto" },
+            { "uid": 9, "id": 9, "title": "lorem esciunt iure omnis dolore", "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto" }
+        ];
+
+        var str = "<table>";
+        for (i = 0; (i <= 9); i++) {
+            str += "<tr>" + "<td>" + obj[i].uid + "</td>" + "<td>" + obj[i].id + "</td>" + "<td>" + obj[i].title + "</td>" + "<td>" + obj[i].body + "</td>" + "</tr>";
+        }
+        str += "</table>";
+        document.getElementById("mydt").innerHTML = str;
+
+
+        var objarr = [
+            { "uid" : 0 , "id" : 0, "title" : "quidem molestiae enim" },
+            { "uid" : 1 , "id" : 1, "title" : "sunt qui excepturi placeat culpa" },
+            { "uid" : 2 , "id" : 2, "title" : "omnis laborum odio" },
+            { "uid" : 3 , "id" : 3, "title" : "non esse culpa molestiae omnis sed optio" },
+            { "uid" : 4 , "id" : 4, "title" : "eaque aut omnis a" },
+            { "uid" : 5 , "id" : 5, "title" : "natus impedit quibusdam illo est" },
+            { "uid" : 6 , "id" : 6, "title" : "quibusdam autem aliquid et et quia" },
+            { "uid" : 7 , "id" : 7, "title" : "qui fuga est a eum" }
+        ];
+        
+        var str = "";       //used to clear saved values from previous examples
+        for (var x of objarr) {
+            str += "<tr> <td>" + x.uid + "</td><td>" + x.id + "</td><td>" + x.title + "</td></tr>";
+        }
+        document.getElementById("mydt1").innerHTML = str;
+
+
+    </script>
+</body>
+
+</html>

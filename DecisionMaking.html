@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decision Making</title>
+</head>
+
+<body>
+    <h1>Decision Making</h1>
+
+    <script>
+
+        ///////     //if-else       ///////
+        var x = 10;
+        // if (x >= 3) {
+        //     console.log("x is: " + x);
+        // }
+
+        // if (x == 4) {
+        //     console.log("x is 4");
+        // } else {
+        //     console.log("x is not 4");
+        // }
+
+        var x = 13, y = 45;
+        if (x > y) {
+            console.log("x is greater" + x);
+        } else {
+            console.log("y is greater" + y);
+        }
+
+        //Nested if-else
+        var x = 30, y = 14, z = 5;
+
+        if (x > y) {
+            if (x > z) {
+                console.log("x is greater: " + x);
+            } else {
+                console.log("z is greater: " + z);
+            }
+        } else {
+            if (y > z) {
+                console.log("y is greater: " + y);
+            } else {
+                console.log("z is greater: " + z);
+            }
+        }
+
+        //Ladder if-else
+        var x = 23, y = 64, z = 55;
+        if (x > y && x > z) {
+            console.log("x is greater: " + x);
+        } else if (y > x && y > z) {
+            console.log("y is greater: " + y);
+        } else if (z > x && z > y) {
+            console.log("z is greater: " + z);
+        }
+
+        var x = 323;
+        if (x % 2 == 0) {
+            console.log("x is even: " + x);
+        } else {
+            console.log("x is odd: " + x);
+        }
+    </script>
+</body>
+
+</html>

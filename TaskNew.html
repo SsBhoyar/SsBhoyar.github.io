@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Task</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: rgb(59, 58, 58);
+            font-family: sans-serif;
+        }
+        .container {
+            padding: 20px;
+            background-color: rgb(136, 183, 240);
+            width: 400px;
+            /* height: 200px; */
+            border-radius: 10px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        label {
+            /* margin-left: 10px;  */
+            font-size: 25px;
+        }
+
+        input {
+            text-align: center;
+            font-size: 16px;
+            width: 100%;
+            height: 35px;
+            display: block;
+            margin:10px 0px;
+            border: 3px solid rgb(216, 132, 239);
+            border-radius: 5px;
+        }
+      
+        button {
+            padding: 10px 20px;
+            background-color: lightgreen;
+            width: 100%;
+            border-radius: 10px;
+            border: 3px solid green;
+            font-size: 1.1rem;
+        }
+
+        #result {
+            width:100%;
+            background-color: white;
+            padding: 10px;
+            border: 2px solid silver;
+            border-radius: 10px;
+            text-align: center;
+            margin: 10px 0;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <label for="">Enter any 2 numbers</label>
+        <input type="number" id="num1">
+        <input type="number" id="num2">
+
+        <label for="">Enter number between 1 an 4</label>
+        <input type="number" name="" id="method">
+
+        <button onclick="calculate()">Calculate</button>
+
+        <p id="result">Result</p>
+    </div>
+
+    <script>
+        function calculate() {
+
+            var d = parseInt(document.getElementById("method").value);
+
+            // if (d <= 4 && d >= 1) {
+            switch (d) {
+                case 1: add();
+                    break;
+
+                case 2: sub();
+                    break;
+
+                case 3: mult();
+                    break;
+
+                case 4: div();
+                    break;
+
+                default:        //option to if-else, default means the else of the condition
+                    invalid();
+                    break;
+            }
+        }
+        function invalid() {
+            document.getElementById("result").innerHTML = "Invalid Number, Select between 1 , 2 , 3 , 4";
+
+        }
+        //Addition      //variable are to be declared in each function again to update the values in first input bars 
+        function add() {
+            var x, y, z;
+            x = parseInt(document.getElementById("num1").value);
+            y = parseInt(document.getElementById("num2").value);
+            z = x + y;
+            document.getElementById("result").innerHTML = "Sum of your Numbers : " + z;
+        }
+
+        //Subtraction
+        function sub() {
+            var x, y, z;
+            x = parseInt(document.getElementById("num1").value);
+            y = parseInt(document.getElementById("num2").value);
+            z = x - y;
+            document.getElementById("result").innerHTML = "Subtraction of your Numbers : " + z;
+        }
+
+        //Multiplication
+        function mult() {
+            var x, y, z;
+            x = parseInt(document.getElementById("num1").value);
+            y = parseInt(document.getElementById("num2").value);
+            z = x * y;
+            document.getElementById("result").innerHTML = "Multiplication of your Numbers : " + z;
+        }
+
+        //Division
+        function div() {
+            var x, y, z;
+            x = parseInt(document.getElementById("num1").value);
+            y = parseInt(document.getElementById("num2").value);
+            z = x / y;
+            document.getElementById("result").innerHTML = "Division of your Numbers : " + z;
+        }
+
+        let x = 10;
+        if (true) {
+            let x = 20;
+            console.log(x);
+        }
+        console.log(x);
+
+        </script>
+
+</body>
+
+</html>

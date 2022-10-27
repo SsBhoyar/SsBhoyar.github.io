@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set & Get</title>
+</head>
+
+<body>
+
+    <h1>Set and Get</h1>
+
+    <script>
+        let person = {
+            "name" : "Rakesh",
+            "age" : 20,
+            getage: function() {        
+                return this.age;
+            },
+            get uage() {                //Getter
+                return this.age;
+            },
+            setage: function(x) {
+                this.age = x;
+            },
+            set sage(x) {               //Setter
+                this.age = x;
+            }
+        }
+
+        console.log(person.age);
+        console.log(person.getage());
+        console.log(person.uage);
+
+        person.age = 30;
+        console.log(person.uage);
+        console.log(person.age);
+
+        person.setage(32);
+        console.log(person.uage);
+        console.log(person.age);
+
+        person.sage = 91;
+        console.log(person.uage);
+        console.log(person.age);
+
+
+    </script>
+</body>
+
+</html>

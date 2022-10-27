@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FUnctions</title>
+</head>
+
+<body>
+    <h1>Functions</h1>
+
+    <script>
+        function show() {
+            console.log("This is a show() function");
+        }
+
+        show();
+        show();
+
+    //without parameters without return value
+        function addition() {
+            var x = 2, y = 3, z = x + y;
+            console.log("Sum is: " + z);
+        }
+
+        addition();
+
+    //with parameter without return value
+        function sum(x, y) {
+            var z = x + y;
+            console.log("Sum = " + z);
+        }
+        sum(3,4);
+
+        var a = 3, b = 5;
+        sum(a, b);
+
+    //without parameter with return value
+        function add() {
+            var x = 3, y = 5, z = x + y;
+            return z;
+        }
+        var c = add();
+        console.log("Sum : " + c);
+
+    //with parameter with return value
+        function plus(x , y) {
+            var z = x + y;
+            return z;
+        }
+
+        var d = plus(9, 9);
+        console.log("Total is: " + d);
+    </script>
+</body>
+
+</html>

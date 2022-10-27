@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example</title>
+</head>
+
+<body>
+    <p id="result"></p>
+    <p id="result1"></p>
+
+    <table>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Age</th>
+        </tr>
+
+        <tbody id="mydt"></tbody>
+    </table>
+
+
+    <script>
+        var str = "<ul>";
+        var fruits = ["Apple", "Mango", "Banana", "Kiwi"]
+        for (var x of fruits) {
+            str += "<li>" + x + "</li>";
+        }
+        str += "</ul>";
+        document.getElementById('result').innerHTML = str;
+
+
+
+        var str = " ";
+        var objarr = [
+            { "fname": "John", "lname": "Doe", "age": 33 },
+            { "fname": "Rohit", "lname": "Shetty", "age": 25 },
+            { "fname": "Sunil", "lname": "Datt", "age": 55 },
+            { "fname": "Aman", "lname": "Khan", "age": 22 }
+        ];
+
+        // for (x = 0; (x <= 3); x++) {
+        //     str += "<h3>F-name = " + objarr[x].fname + "<br>" +
+        //         " L-name = " + objarr[x].lname + "<br>" +
+        //         " Age = " + objarr[x].age + "</h3>";
+        // }
+        // document.getElementById("result1").innerHTML = str;
+
+        // for (var x of objarr) {
+        //     str += "<h3>First Name : " + x.fname + "<br>" + "Last Name : " + x.lname + "<br>" + "Age : " + x.age + "</h3>"; 
+        // }
+        // document.getElementById("result1").innerHTML = str;
+
+        for (var x of objarr) {
+            str += "<tr><td>" + x.fname + "</td><td>" + x.lname + "</td><td>" + x.age + "</td></tr>"
+        }
+        document.getElementById("mydt").innerHTML = str;
+
+    </script>
+</body>
+
+</html>

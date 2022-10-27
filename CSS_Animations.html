@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <style>
+        .box {
+            width: 650px;
+            height: 150px;
+            border-radius: 15px;
+            /* background-color: greenyellow; */
+            color: white;
+            position: relative;
+            transform: translate(0%,70%);
+        }
+        .css {
+            width: 150px;
+            height: 120px;
+            text-align: center;
+            background-color: red;
+            border-radius: 15px;
+            position: absolute;
+            top: 10%;
+            animation-name: blok;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+            /* animation-direction: alternate; */
+            /* animation-direction: alternate-reverse; */
+        }
+        h1 {
+            /* vertical-align: middle; */
+            font-size: 3em;
+        }
+
+        @keyframes blok {
+            0% {
+                background-color: mediumaquamarine;
+                left: 0px;
+                top: 15px;
+            }
+            10% {
+                transform: rotate(10deg);
+                background-color: aquamarine;
+                color: rgb(94, 94, 249);
+            }
+            50% {
+                background-color: seagreen;
+                transform: rotate(0deg);
+                left: 500px;
+                /* right: 100px; */
+            }
+            100% {
+                /* transform: translateX(00px); */
+                transform: rotate(-360deg);
+                left: 0px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="css"><h1>CSS</h1></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copied task</title>
+</head>
+<body>
+    <input type="number" id="f1">
+    <input type="number" id="f2">
+    <button onclick="grt()">Find Grt</button>
+    <button onclick="sml()">Find Smal</button> 
+    <p id="res"></p>
+    <script>
+
+        function grt() {
+            var x, y, z;
+            x= parseInt(document.getElementById('f1').value);
+            y= parseInt(document.getElementById('f2').value);
+            z=(x > y ? x : y);
+            document.getElementById('res').innerHTML= z;
+            
+        }
+        function sml(){
+            var x, y, z;
+            x= parseInt(document.getElementById('f1').value);
+            y= parseInt(document.getElementById('f2').value);
+            z= (x < y ? x: y);
+            document.getElementById('res').innerHTML= z;
+        }
+    </script>
+</body>
+</html>

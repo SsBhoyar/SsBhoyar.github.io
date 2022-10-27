@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async</title>
+</head>
+<body>
+    <h1>Async</h1>
+
+    <script>
+
+    //Callback Function
+
+        // function f1(x) {
+        //     console.log(x);
+        // }
+
+        // function f2(a, b) {
+        //     console.log("Function-2");
+        //     a(b);
+        // }
+
+        // f2(f1, "Hello");
+
+        //Using Anonymous function in Arrow function  , more used method
+        f2 = (a , b) => {console.log("F2");
+        a(b);
+        }
+
+        f2(x => {
+            console.log(x);
+        } , "Anonymous function")
+
+
+    //Asynchronous Behaviour of Javascript
+        console.log("One");
+        console.log("Two");
+        console.log("Three");
+        setTimeout(() => console.log("Time-Out"), 0);
+        console.log("Four");
+        console.log("Five");
+
+    </script>
+</body>
+</html>

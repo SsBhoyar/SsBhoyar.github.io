@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iterables</title>
+</head>
+
+<body>
+    <h1>Iterables</h1>
+    <script>
+        
+        // function myfun() {
+        //     let x = 1;
+        //     return {
+        //         next: function() {
+        //             x += 2;
+        //             return { value: x, done: true }
+        //         }
+        //     }
+        // }
+
+        // let dt = myfun();
+        // dt.next();
+        // dt.next();
+        // dt.next();
+        // console.log(dt.next().value);
+
+    //homemade iterators
+        //create an object
+        myNum = {};
+        
+        //make it iterable
+        myNum[Symbol.iterator] = function() {
+            let x = 0, done = false;
+            return {
+                next() {
+                    x += 2;
+                    if (x >= 10) {
+                        done = true;
+                    }
+                    return {
+                        value : x, done : done
+                    }
+                }
+            }
+        }
+        for (let a of myNum) {
+            console.log(a);
+        }
+
+    //while loop iterator
+        
+    </script>
+</body>
+
+</html>

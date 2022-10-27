@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If-else Tasks</title>
+</head>
+
+<body>
+    <h1>If-else tasks</h1>
+
+    <script>
+
+        // var x = 5, y = 7;
+        // z = x / y;
+        // console.log(z);
+
+        // x = 5, y = 6;
+        // z = (x > y ? x : y);
+        // console.log(z);
+
+        // x = 9, y = 19;
+        // z = (x > y ? x : y);
+        // console.log(z);
+
+
+        //1> Maximum between 2 numbers
+        var x = 10, y = 9;
+        if (x > y) {
+            console.log("x is greater: " + x);
+        } else {
+            console.log(" y is greater: " + y);
+        }
+        
+
+        //2> Maximum between 3 numbers
+        var x = 133, y = 77, z = 55;
+        if (x > y) {
+            if (x > z) {
+                console.log("x is greater: " + x);
+            } else {
+                console.log("z is greater: " + z);
+            }
+        } else {
+            if (y > z) {
+                console.log("y is greater: " + y);
+            } else {
+                console.log("z is greater: " + z);
+            }
+        }
+
+
+        //3> Number is -ve, +ve or 0
+        var x = -99;
+        if (x > 0) {
+            console.log(x + " is Positive");
+        } else if (x < 0) {
+            console.log(x + " is Negative");
+        } else {
+            console.log("x is Zero: " + x);
+        }
+
+
+        //4> Whether number is divisible by 5 and 11
+        var x = 2110;
+        if (x % 5 == 0 && x % 11 == 0) {
+            console.log(x + " is divisible by both 5 and 11");
+        } else {
+            console.log(x + " is not divisible by both 5 and 11");
+        }
+
+
+        //5> Number is even or odd
+        var x = 33;
+        if (x % 2 == 0) {
+            console.log(x + " is even");
+        } else {
+            console.log(x + " is odd");
+        }
+
+
+        //7> Character is alphabet or not
+        var x = "Q";
+        if (x >= "A" && x <= "Z") {
+            console.log(x + " is an alphabet");
+        } else if (x >= "a" && x <= "z") {
+            console.log(x + " is an alphabet");
+        } else {
+            console.log(x + " is not an alphabet");
+        }
+
+
+        //8> Vowel or Consonant
+        var x = "P";
+        if (x >= "a" && x <= "z" && x == "a" || x == "e" || x == "i" || x == "o" || x == "u" || x >= "A" && x <= "Z" && x == "A" || x == "E" || x == "I" || x == "O" || x == "U") {
+            console.log(x + " is a vowel");
+        } else {
+            console.log(x + " is a consonant");
+        }
+
+
+        //9> Alphabet or number or special character
+        var x = "*";
+        if (x >= "A" && x >= "Z" && x >= "a" && x <= "z") {
+            console.log(x + " is an Alphabet");
+        } else if (x >= 0 || x <= 0) {
+            console.log(x + " is a Numerical Digit");
+        } else {
+            console.log(x + " is a Special Character");
+        }
+
+
+        //10> Uppercase or Lowercase
+        var x = "u";
+        if (x >= "A" && x <= "Z") {
+            console.log(x + ' is Uppercase');
+        } else if (x >= "a" && x <= "z") {
+            console.log(x + ' is Lowercase');
+        } else {
+            console.log(x + ' is not an alphabet');
+        }
+
+
+        //11> Week number and Week day
+        var x = "8";
+        if (x == 1) {
+            console.log("Sunday");
+        } else if (x == 2) {
+            console.log("Monday");
+        } else if (x == 3) {
+            console.log("Tuesday");
+        } else if (x == 4) {
+            console.log("Wednesday");
+        } else if (x == 5) {
+            console.log("Thursday");
+        } else if (x == 6) {
+            console.log("Friday");
+        } else if (x == 7) {
+            console.log("Saturday");
+        } else { console.log("Invalid input; select between 1 and 7"); }
+
+
+        //12> Month number and days in that month
+        var x = "13";
+        if (x == 1 || x == 3 || x ==5 || x == 7 || x == 8 || x == 10 || x == 12) {
+            console.log("Number of days in this month are 31");
+        } else if (x == 4 || x == 6 || x ==9 || x == 11) {
+            console.log("Number of days in this month are 30");
+        } else if ( x == 2) {
+            console.log("Number of days in this month are 28 or 29");
+        } else {console.log("Invalid input; select between 1 and 12");}
+        
+
+        //14> Triangle is valid or not with given angles
+        var x = 33, y = 33, z = 114;
+        if (x + y + z == 180) {
+            console.log("Given angles form a triangle");
+        } else {
+            console.log("Given angles do not form a triangle");
+        }
+
+
+        //16> Triangle is equilateral, isosceles or scalene
+        var x = 88, y = 99, z = 99;
+        if (x == y && y == z) {
+            console.log("Triangle is Equilateral");
+        } else if ( x == y || y == z || x == z) {
+            console.log("Triangle is Isosceles");
+        } else {
+            console.log("Triangle is Scalene");
+        }
+
+
+        //18> Calculate profit or loss
+        var cp = 99, sp = 99;
+        if (sp > cp) {
+            amt = sp - cp;
+            console.log("Profit of: " + amt);
+        } else if (sp < cp) {
+            amt = cp - sp;
+            console.log("Loss of: " + amt);
+        } else {
+            console.log("Neither profit nor loss");
+        }
+
+
+        //19> Grading of student's scores 
+        var a = 90, b = 88, c = 75, d = 66, e = 88;
+        f = a + b + c + d + e;
+        t = (f / 5);
+
+        if (t >=90) {
+            console.log("Grade A for " + t + "%");
+
+        } else if (t >= 81 && t <= 90) {
+            console.log("Grade B for " + t + "%");
+
+        } else if (t >= 71 && t <= 80) {
+            console.log("Grade C for " + t + "%");
+
+        } else if (t >= 61 && t <= 70) {
+            console.log("Grade D for " + t + "%");
+
+        } else if (t >= 41 && t <= 60) {
+            console.log("Grade E for " + t + "%");
+
+        } else if (t <= 40) {
+            console.log("Grade F for " + t + "%");
+        }
+
+
+        //20> Salary
+        var x = 15000;
+        if (x <= 10000) {
+            da = x * 0.8;    //Daily Allowance
+            hra = x * 0.2;   //House Rent Allowance
+        } else if (x >= 10000 && x <= 20000) {
+            da = x * 0.9;
+            hra = x * 0.25;
+        } else {
+            da = x * 0.95;
+            hra = x * 0.3;
+        }
+
+        sal = x + da + hra;
+        console.log("Gross salary is: " + sal);
+
+
+
+        //21> Electricity bill
+        var unit = 120, total;
+
+        if (unit <= 50){
+            total = unit * 0.5;
+        } else if (unit >= 51 && unit <= 150) {
+            total = (50 * 0.5) + ((unit - 50) * 0.75);
+        } else if (unit >= 151 && unit <= 250) {
+            total = (50 * 0.5) + (100 * 0.75) + ((unit - 150) * 1.2);
+        } else if (unit >= 251) {
+            total = (50 * 0.5) + (100 * 0.75) + (100 * 1.2) + ((unit - 250) * 1.5);
+        }
+
+        total = total + total * 0.2;
+        console.log("Total bill is: " + total);
+
+    </script>
+
+
+</body>
+
+</html>

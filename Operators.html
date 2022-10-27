@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operators</title>
+</head>
+
+<body>
+    <h1>Operators</h1>
+
+    <script>
+        ///////     //Arithmetic Operator       ///////
+        var x = 17, y = 7, z;
+        z = x / y;
+        console.log(z);
+
+        z = x % y;
+        console.log(z);  //solution is 3 (remainder of x / y: 17 / 7: 3)
+
+        x = 2, y = 3;
+        z = x ** y;     //  ** is just power symbol ^
+        console.log(z);
+
+
+
+
+        ///////     //ternary / Conditional operators   ///////
+        // condition ? true : false
+
+        var x = 7, y = 3, z;
+        z = (x > y ? x : y);
+        console.log("Greater value: " + z);
+
+        var x = 7, y = 5, z;
+        z = (x < y ? x : y);
+        console.log("Lesser value: " + z);
+
+        var x = 1009, y = 19, z = 21, d;
+        d = (x > y ? (x > z ? x : z) : (y > z ? y : z));
+        console.log("Greater value: " + d);
+
+        var x = 15, y = 7, z = 10, d;
+        d = (x < y ? (x < z ? x : z) : (y < z ? y : z));
+        console.log("Smaller value: " + d);
+
+        var x = 10, y = 17;
+        (x > y ? console.log("Greater value:x is  " + x) : console.log("Greater value:y is " + y));
+
+        var x = 100, y = 40, z = 30;
+        (x > y ?
+            (x > z ? console.log("Greater value: x is " + x) : console.log("Greater value: z is " + z))
+            :
+            (y > z ? console.log("Greater value: y is " + y) : console.log("Greater value: z is " + z))
+        );
+
+        var x = 10, y = 9, z = 3;
+        (x < y ?
+            ((x < z ? console.log("x is smaller: " + x) : console.log("z is smaller: " + z)))
+            :
+            (y < z ? console.log("y is smaller: " + y) : console.log("z is smaller: " + z))
+        );
+
+        var x = 10, y = 11, z = 12, d;
+        d = (x > y && x > z ? x : (y > x && y > z ? y : z));
+        console.log("Greater value: " + d);
+
+
+
+
+
+        ///////     //Unary Operators       ///////
+
+            //Increment operator   
+        var x = 2, y = 3, z;
+        z = x++;        //post-increment (x=2 z=3)
+        console.log("x = " + x + "; z = " + z);
+
+        var x = 6, y = 4, z;
+        z = ++x;        //pre-increment (both values should be equal)(x=z=5)
+        console.log("x = " + x + " & z = " + z);
+
+            //Decrement operator
+        var x = 5, y = 4, z;
+        z = x--;         //post-decrement (x=1 z=1)
+        console.log("x=" + x + " & z=" + z);
+
+        var x = 54, y = 3, z;
+        z = --x;        //pre-decrement (x=z=53)
+        console.log("x=" + x + " & z=" + z);
+
+        var x = 10, y;
+        y = -x;
+        console.log("x = " + x);
+        console.log("y = " + y);
+
+        var x = 10, y;
+        y = +x;
+        console.log("x = " + x);
+        console.log("y = " + y);
+
+        var x = "10", y;
+        y = x;     //+ makes it number, without +, it reads as a string, works with -, not with * and /
+        console.log(x);
+        console.log(y);
+        console.log(typeof (x));
+        console.log(typeof (y));
+
+
+
+
+
+        ///////     // Arithmetic Assignment Operators      ///////
+
+        var x = 2, y = 3;
+        //comment out previous equations or older values of x gets used in next equation
+        // x += y; //this means x = x + y
+        console.log("x = " + x + "  y = " + y);
+
+        // x -= y;  // x = x - y
+        console.log("x = " + x + " y = " + y);
+
+        // x *= y;
+        console.log("x = " + x + " y = " + y);
+
+        // x /= y;        
+        console.log("x = " + x + " y = " + y);
+
+
+
+
+
+         ////////   //Bitwise Operators     ///////
+
+        var x = 5, y = 3;
+
+        z = x & y;
+        console.log(z);
+
+        z = x | y;
+        console.log(z);
+
+        z = x ^ y;
+        console.log(z);
+
+        z = x<<1;
+        console.log(z);
+
+        z = x>>1;
+        console.log(z);
+
+
+        ///////     //
+    </script>
+</body>
+
+</html>

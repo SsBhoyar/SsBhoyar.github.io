@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritance & Constructor</title>
+</head>
+<body>
+    <h1>Inheritance</h1>
+
+    <script>
+        console.log("###  Single level Class  ###");
+    // Single class
+        class Base {
+            show() {
+                console.log("Base class!!");
+            }
+        }
+        class Derived extends Base {     //always write extends 'base class name'
+            disp() {
+                console.log("Derived/Child class!!!");
+            }
+        }
+
+        let b = new Base();
+        let d = new Derived();
+        
+        b.show();
+        console.log(" ");
+        d.disp();
+        d.show();       //child class can access parent's functions now
+        console.log(" ");
+        
+        //Multilevel Class
+        console.log("###  Multilevel Class  ###");
+        class Super {
+            show() {
+                console.log("Multilevel's Super class");
+            }
+        }
+
+        class Child extends Super {
+            disp() {
+                console.log("Super's 1st Child Class");
+            }
+        }
+
+        class Third extends Child {
+            print() {
+                console.log("Super's 2nd Child Class");
+            }
+        }
+
+        let s = new Super();
+        let c = new Child();
+        let t = new Third();
+
+        s.show();
+        console.log(" ");
+        c.disp();
+        c.show();
+        console.log(" ");
+        t.print();
+        t.disp();
+        t.show();
+        console.log(" ");
+        console.log(" ");
+
+        
+        //Multiple Class
+        console.log("###  Multiple Class  ###");
+        class Main {
+            show() {
+                console.log("Multiple's Main class");
+            }
+        }
+
+        class Der1 extends Main {
+            disp() {
+                console.log("Multiple's 1st child class");
+            }
+        }
+
+        class Der2 extends Main {
+            print() {
+                console.log("Multiple's 2nd child class");
+            }
+        }
+
+        let m = new Main();
+        let d1 = new Der1();
+        let d2 = new Der2();
+
+        m.show();
+        console.log(" ");
+        d1.disp();
+        d1.show();
+        console.log(" ");
+        d2.print();
+        d2.show();
+        console.log(" ");
+        console.log(" ");
+
+        
+        //Heirarchial class
+        console.log("###  Heirarchial Class  ###");
+        class Parent {
+            show() {
+                console.log("Parent class");
+            }
+        }
+            //1st Child
+        class Child1 extends Parent {
+            disp() {
+                console.log("1st Child class");
+            }
+        }
+
+        class Derived1 extends Child1 {
+            print() {
+                console.log("1st Child's Derived class");
+            }
+        }
+
+        class Derived2 extends Child1 {
+            clip() {
+                console.log("1st Child's 2nd Derived class");
+            }
+        }
+            //2nd Child
+        class Child2 extends Parent {
+            disp() {
+                console.log("2nd Child class");
+            }
+        }
+
+        class Derived3 extends Child2 {
+            print() {
+                console.log("2nd Child's Derived class");
+            }
+        }
+
+        class Derived4 extends Child2 {
+            clip() {
+                console.log("2nd Child's 2nd Derived class");
+            }
+        }
+
+        let p, c1, da, db, c2, dc, dd; 
+        p = new Parent();
+        c1 = new Child1();
+        da = new Derived1();
+        db = new Derived2();
+        c2 = new Child2();
+        dc = new Derived3();
+        dd = new Derived4();
+
+        p.show();
+        console.log(" ");
+
+        c1.disp();
+        c1.show();
+
+        da.print();
+        da.disp();
+        da.show();
+
+        db.clip();
+        db.disp();
+        db.show();
+
+        console.log(" ");
+        c2.disp();
+        c2.show();
+
+        dc.print();
+        dc.disp();
+        dc.show();
+
+        dd.clip();
+        dd.disp();
+        dd.show();
+
+        console.log(" ");
+
+// Constructor
+
+        // Simple
+        class Emp {
+            constructor() {
+                console.log("Emp Constructor");
+            }
+        }
+
+        let em = new Emp();
+
+        // Parameterised
+        class Empl {
+            constructor(x , y) {
+                console.log("Employee Constructor " + x + " " + y);
+            }
+        }
+
+        let emp = new Empl(3 , 4);
+        console.log(" ");
+
+// Constructor in Inheritance
+        //Simple
+        class Con {
+            constructor() {
+                console.log("Inheritance Constructor");
+            }
+        }
+
+        class Child3 extends Con {
+            constructor() {
+                super();     // always use Super(); so that child constructor can call the parent constructor class
+                console.log("Child Constructor");
+            }
+        }
+
+        let cn = new Child3();
+        console.log(" ");
+
+        //Parameterised
+        class Con1 {
+            constructor(a) {   //must enter a parameter
+                console.log("Parameterised Parent " + a);
+            }
+        }
+
+        class Child4 extends Con1 {
+            constructor(x , y) {
+                super(y);      //must enter a parameter either x or y
+                console.log("Child Constructor " + x + " " + y);
+            }
+        }
+
+        let cn1 = new Child4(8 , 7);
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async</title>
+</head>
+
+<body>
+    <h1>Async</h1>
+
+    <script>
+        // function func1(x) {
+        //     console.log("function 1: " + x);
+        // }
+
+        // function func2(a) {
+        //     console.log("function 2: " + a);
+        //     func1("Hello, this is function 1")
+        // }
+
+        // //this is where we call function func2
+        // func2("Hey, this is function 2");
+
+
+        //     //alternate method
+        // function fun1(x) {
+        //     console.log("function 1 is: " + x);
+        // }
+
+        // function fun2(a , b) {
+        //     console.log("function 2 is: " + a);
+        //     b(" Hello, this is function 1");
+        // }
+
+        // fun2("Hi" , fun1);
+
+        // //another method (mostly used method)
+        // function fun2(a, b) {
+        //     console.log("fun2 = " + a);
+        //     b("Hellooo");
+        // }
+        // //Anonymous / self-calling function
+        // fun2("World!!", function (x) {
+        //     console.log("fun1 = " + x);
+        // });
+
+            //using arrow method
+        function fun2(a , b) {                  
+            console.log("function-2 : " + a);   
+            b("Hello!!!");
+        }
+
+        fun2("HI!!" , (x) => {
+            console.log("function-1 : " + x);
+        });
+    </script>
+</body>
+
+</html>
